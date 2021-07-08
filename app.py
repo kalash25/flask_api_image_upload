@@ -45,5 +45,19 @@ def get_img(id):
     return Response(img.img, mimetype=img.mimetype)
 
 
+# IF WE WANT TO SEARCH FOR FILE BASED ON NAME
+# NEED TO CHANGE THE FILENAME ON TOP TO THE DESIRED ONE DURING UPLOAD FOR THIS TO WORK
+
+# @app.route('/<filename>')
+# def get_img(filename):
+#     # img = Img.query.get(filename)
+#     img = Img.query.filter_by(name=filename).first()
+
+#     if not img:
+#         return jsonify({"code": 404})
+
+#     return Response(img.img, mimetype=img.mimetype)
+
+
 app.run(debug=True)
 
